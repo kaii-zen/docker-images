@@ -1,0 +1,11 @@
+sudo: required
+language: generic
+services: docker
+
+env:
+  global:
+    - secure: "egmT0Szw1T8srIXSz5pJ5vVmYQ+gexHKpmo0bBK4MZkTBJa7lTyO0aOele4tRSyeO6H8v+530pCG2RiuMsZGATYd0cU7Ms+y2seFht5xfhBaJV4f0BugRzydw1YgVObP2NWHUEGE9rao/q5Nbr4WJOt8xzbuIwNBkBoUKwzYUugin4sUKM0CtGKyEfJOs0VBEl025N4sw8CAWVsqx00feSxNSvz18LHoGhiu1q0F54vvWZSndFvRRwlD0kAzlFy2r9yeeFwYFfPmwclAY4oEbM6Zr7OE9pL8GR5W5EaoUohIUvC3o0TqlncNQZcY27OT17Bpg1bFvMoIXVx6g7HSiyRUBPAOn0Hbe47J4i094cw/0zxng4NEbP6MmzOXporO0q4dvIeOIYXwUYqTub96l7IO79WdD0MkKc+ZHsSew3Tyg42aHgZiwygtq28Q3las7vQPcNqS9Y828KnDGdxUARoJN2zeBCBNFCCvbgQ8lwjvW7tHBZD5DNN6rVUBKyPdCfKlJ4aqESyaHHBSLKL2glzmb8wF6qbSTdtKhxKnlY+u+L+zVCQlD1oNuAlhvnvbzgUlYlyGya5spkvTfSOpVvZc5unBXqyYsf7z9a41HmbZww9v9Zl2E6vRh6viyxRDeG3fFM0hzwqvUe+or7ngdSXW47oWf/lLqv0U6MBOq4c="
+
+before_install: docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
+install: make -j2
