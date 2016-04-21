@@ -31,6 +31,8 @@ RUN apt-get -qq update &&   \
     python-pip           && \
     apt-get clean        && \
     pip install awscli   && \
+    npm install -g --quiet --no-spin npm@3 && \
+    npm set progress=false                 && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD [ "node" ]
