@@ -42,6 +42,6 @@ RUN set -ex \
 	&& rm -rf /usr/src/python /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # install "virtualenv", since the vast majority of users of this image will want it
-RUN pip install --no-cache-dir virtualenv
+RUN pip install --no-cache-dir virtualenv pip-tools awscli
 
 CMD ["python2"]
